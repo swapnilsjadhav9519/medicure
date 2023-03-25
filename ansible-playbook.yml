@@ -16,5 +16,10 @@
     become : yes
     become_user : root
 
-  - name: Deploy Docker Container
-    command: docker run -itd -p 8084:8082 niladrimondaldcr/medicure:1.0
+  - name: Copy file with owner and permission, using symbolic representation
+    ansible.builtin.copy:
+      src: ./medicure.yml
+      dest: /home/ubuntu/medicure.yml
+      owner: ubuntu
+      group: ubuntu
+      mode: u=rw,g=r,o=r
