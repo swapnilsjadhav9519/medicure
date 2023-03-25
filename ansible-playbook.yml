@@ -24,8 +24,7 @@
       group: ubuntu
       mode: u=rw,g=r,o=r
    
-   - name: Create a pod
-     k8s:
-       state: present      # State=present when you need to create new object
-       namespace: default  # defining the namespace
-       src: /home/ubuntu/medicure.yml
+   - name : run container
+     command : kubectl apply -f /home/ubuntu/medicure.yml
+     become : yes
+     become_user : ubuntu
