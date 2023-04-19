@@ -18,7 +18,7 @@ spec:
       - name: medicure-mvn-container
         image: swapnil9519/medicure:1.0
         ports:
-        - containerPort: 8082
+        - containerPort: 8083
 ---
 apiVersion: v1
 kind: Service
@@ -33,5 +33,5 @@ spec:
   type: NodePort
   ports:
   - nodePort: 31000
-    port: 8082
-    targetPort: 8082
+    port: 8083
+    targetPort: 8083
